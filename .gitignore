@@ -1,0 +1,4 @@
+*.txt
+Pipfile
+.vscode
+__pycache__
