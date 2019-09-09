@@ -2,6 +2,8 @@ import static_data
 import datetime
 import random
 import string
+import os
+
 
 def generate_reports(num):
 
@@ -40,10 +42,11 @@ def generate_reports(num):
 						 'Ongoing Tasks:\n' 	+ ongoing_tasks + '\n' + \
 						 'Completed Tasks:\n' 	+ completed_tasks + '\n' + \
 						 'Problems:\n' 			+ problems + '\n' + \
-						 'Approved By:\n' 		+ approved_by
+						 'Approved By: ' 		+ approved_by
 						 
 		# Write content to the line
 		f.write(report_content)
+		f.close()
 
 
 def generate_bloat(num):
@@ -55,10 +58,17 @@ def generate_bloat(num):
 						
 		f = open(file_name, 'w')
 		f.write('AAAAAAAAAAA')
+		f.close()
 
 
+def delete_files():
+	for file_name in os.listdir(os.getcwd()):
+		if file_name.endswith('.txt'):
+			os.remove(file_name)
 
 
 if __name__ == '__main__':
-	# generate_reports(10)
+	# Comment/uncomment as you wish
+	generate_reports(10)
 	generate_bloat(10)
+	delete_files()

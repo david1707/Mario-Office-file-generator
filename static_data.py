@@ -21,10 +21,10 @@ ongoing_tasks = [
   'Working on Level 7',
   'Working on Level 8',
   'Organizing the office reunion party',
-  'Buying extra stabples',
+  'Buying extra stapples',
   'Bending all paperclips back into shape',
   'Making photo copies from Luigi\'s photoshoot',
-  'Posting Daysi\'s pictures to Instagram',
+  'Posting Daisy\'s pictures to Instagram',
   'Trying to save the princess',
   'Figuring out how to jump over man-eating plant'
 ]
