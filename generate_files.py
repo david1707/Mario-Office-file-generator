@@ -71,4 +71,4 @@ if __name__ == '__main__':
 	# Comment/uncomment as you wish
 	generate_reports(10)
 	generate_bloat(10)
-	delete_files()
+	# delete_files()
