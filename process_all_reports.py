@@ -1,10 +1,12 @@
 import os
+import shutil
 
+
+subdirectory_folder = 'flagged_files'
 
 def process_all_reports():
 
-	if os.path.exists('flagged_files') == False:
-		os.mkdir('flagged_files')
+	os.mkdir(subdirectory_folder)
 
 	for file_name in os.listdir(os.getcwd()):
 		if file_name.endswith('_report.txt'):
@@ -57,6 +59,14 @@ def process_report(file_name):
 	flagged_report.write(f.read())
 	flagged_report.close()
 
-	os.rename(flagged_report_filename, os.path.join('flagged_files', flagged_report_filename))
+	os.rename(flagged_report_filename, os.path.join(subdirectory_folder, flagged_report_filename))
 
-process_all_reports()
+
+def delete_files():
+	if os.path.isdir(subdirectory_folder):
+		shutil.rmtree(subdirectory_folder)
+
+
+if __name__ == '__main__':
+	delete_files()
+	process_all_reports()
